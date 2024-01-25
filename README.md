@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Project: Belonging2Soil - React.js Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Running the Project
 
-## Available Scripts
+1. Clone the repository.
+2. Navigate to the project directory.
+3. Run `npm install` to install dependencies.
+4. Use `npm start` to launch the app in development mode.
+5. Access [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+The "Belonging2Soil" project revolves around a parallax website created using React.js. This website serves as a comprehensive platform to showcase our mission, findings, data, results, media, and blog, all aimed at encouraging people to learn about the importance of soil ecosystems.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Gallery Wall
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Title: Belonging to Soil: VR Experience, 2020 - 2023
 
-### `npm test`
+**Description:**
+Explore the world beneath the surface through a virtual reality experience simulating the life of a springtail, a crucial creature in soil ecosystems. Traverse landscapes, interact with elements, and discover the beauty of soil in this immersive journey.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Materials:**
+- Virtual Reality experience
+- VR headset with controllers
+- Charging station
+- Plant roots
+- Jute rug
 
-### `npm run build`
+**Supported By:**
+This project is made possible by a grant from the Arts & Humanities at The Ohio State University.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Instructions for VR Experience:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clean the headset using disinfecting wipes before use.
+2. Put on the VR headset, adjusting the fit with the turn wheel and Velcro strap.
+3. Grasp VR controllers, go to the designated "play area" on the round rug.
+4. Start the experience by pointing at the START menu.
+5. Follow instructions for operating the springtail avatar.
+6. After completion, place the headset and controllers back on the charging station.
