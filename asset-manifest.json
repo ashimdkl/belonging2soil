@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/belonging2soil/static/css/main.8c13d27d.css",
+    "main.js": "/belonging2soil/static/js/main.f91db910.js",
+    "static/media/layer-base.png": "/belonging2soil/static/media/layer-base.4f9e0d84d841a392bbe1.png",
+    "static/media/layer-middle.png": "/belonging2soil/static/media/layer-middle.2fc74a0b23621a1baa83.png",
+    "static/media/dungeon.png": "/belonging2soil/static/media/dungeon.0e6b32205b0d491438c7.png",
+    "static/media/layer-front.png": "/belonging2soil/static/media/layer-front.d03f18631c1aed5975e1.png",
+    "static/media/ground.png": "/belonging2soil/static/media/ground.9829edc955c66a9028d8.png",
+    "index.html": "/belonging2soil/index.html",
+    "main.8c13d27d.css.map": "/belonging2soil/static/css/main.8c13d27d.css.map",
+    "main.f91db910.js.map": "/belonging2soil/static/js/main.f91db910.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c13d27d.css",
+    "static/js/main.f91db910.js"
+  ]
+}
