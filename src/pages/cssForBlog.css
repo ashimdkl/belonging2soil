@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: transparent; /* Set background color to transparent */
+  }
+  
+  .blog-container {
+    text-align: center;
+    margin: 0; /* Remove margin */
+    padding: 20px;
+    background-image: url('https://coolbackgrounds.io/images/backgrounds/white/white-trianglify-b79c7e1f.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .blog-heading {
+    font-family: 'Comic Sans MS', cursive;
+    text-decoration: underline;
+    margin-bottom: 20px;
+  }
+  
+  .blog-textarea {
+    width: 80%;
+    height: 150px;
+    margin: 20px 0;
+  }
+  
+  .blog-post-button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
