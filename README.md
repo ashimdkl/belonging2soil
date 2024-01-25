@@ -1,5 +1,7 @@
 # Project: Belonging2Soil - React.js Application
 
+## Languages: React.js, css, node.js 
+## Utilized various frameworks, please see files for specifics.
 ## Running the Project
 
 1. Clone the repository.
