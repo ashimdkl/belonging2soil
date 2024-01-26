@@ -1,5 +1,8 @@
 # Project: Belonging2Soil - React.js Application
+![Alt Text](https://media.giphy.com/media/deBoZEzkDxtSKykEhG/giphy.gif)
 
+## Languages: React.js, css, node.js 
+## Utilized various frameworks, please see files for specifics.
 ## Running the Project
 
 1. Clone the repository.
