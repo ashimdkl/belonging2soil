@@ -6,6 +6,8 @@ import dungeonImage from "../img/dungeon.png";
 import Button from "../components/button";
 import "./cssForHome.css";
 
+const transparentGifSrc = "https://64.media.tumblr.com/c9fdeea7e3bd65237afe87afcb401d60/tumblr_p787sf0CPK1vpf6ddo1_640.gif";
+
 function App() {
   const [shouldSway, setShouldSway] = useState(true);
 
@@ -13,7 +15,7 @@ function App() {
     //  sway class on page load
     setShouldSway(true);
 
-    // Add scroll event listener
+    //  scroll event listener
     const handleScroll = () => {
       let scrollY = window.scrollY;
       document.documentElement.style.setProperty("--scrollTop", `${scrollY}px`);
@@ -28,15 +30,19 @@ function App() {
   }, []);
 
   useEffect(() => {
-    //  an audio element
+    // audio element
     const audioElement = new Audio("https://www.youtube.com/watch?v=VxrH8mUWyGc");
     audioElement.loop = true;
-    audioElement.volume = 1; 
+    audioElement.volume = 0.5; // Adjust the volume as needed
 
-    // Play the audio
+    // playing the audio
     audioElement.play();
 
-  }, []); 
+    // Cleanup on component unmount
+    return () => {
+      audioElement.pause();
+    };
+  }, []); // Empty dependency array ensures the effect runs only once on mount
 
   return (
     <>
@@ -104,6 +110,10 @@ function App() {
             />
             <div className="copy">© ashim dhakal</div>
           </article>
+          {/* Transparent GIF Animation */}
+          <div className="transparent-gif">
+            <img src={transparentGifSrc} alt="Transparent GIF Animation" />
+          </div>
         </div>
       </div>
     </>

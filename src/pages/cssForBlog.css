@@ -1,48 +1,60 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: transparent; /* Set background color to transparent */
-  }
-  
-  .blog-container {
-    text-align: center;
-    margin: 0; /* Remove margin */
-    padding: 20px;
-    background-image: url('https://coolbackgrounds.io/images/backgrounds/white/white-trianglify-b79c7e1f.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  }
-  
-  .blog-heading {
-    font-family: 'Comic Sans MS', cursive;
-    text-decoration: underline;
-    margin-bottom: 20px;
-  }
-  
-  .blog-textarea {
-    width: 80%;
-    height: 150px;
-    margin: 20px 0;
-  }
-  
-  .blog-post-button {
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ccc;
-  }
-  
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.posts {
+  margin: 30px auto; /* Center the posts container */
+}
+
+.blog-post {
+  width: 80%;
+  margin: 15px auto; /* Center each post and provide vertical spacing */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-container {
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background-image: url('https://coolbackgrounds.io/images/backgrounds/white/white-trianglify-b79c7e1f.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.blog-heading {
+  font-family: 'Comic Sans MS', cursive;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.blog-textarea {
+  width: 80%;
+  height: 150px;
+  margin: 20px 0;
+}
+
+.blog-post-button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+}

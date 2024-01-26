@@ -2,53 +2,67 @@ import React, { useState } from 'react';
 import './cssForBlog.css';
 
 const BlogPage = () => {
-  const [blogText, setBlogText] = useState('');
-  const [userName, setUserName] = useState('');
-  const [isPopupVisible, setPopupVisibility] = useState(false);
-
-  const handleInputChange = (event) => {
-    setBlogText(event.target.value);
-  };
-
-  const handleNameChange = (event) => {
-    setUserName(event.target.value);
-  };
-
-  const handlePostClick = () => {
-    if (userName.trim() === '') {
-      setPopupVisibility(true);
-    } else {
-      // Handle the post (you can send it to a server, store in state, etc.)
-      console.log('User:', userName);
-      console.log('Blog Text:', blogText);
-      // Clear the text area and name after posting
-      setBlogText('');
-      setUserName('');
+  const [posts, setPosts] = useState([
+    {
+      username: 'Ashim',
+      message: 'Currently working on finishing touches of the website!',
+      timestamp: new Date(),
+    },
+    {
+      username: 'Ashim',
+      message: 'Working on the blog/upload sections',
+      timestamp: new Date(),
+    },
+    {
+      username: 'Ashim',
+      message: 'Animations fixed in first page.',
+      timestamp: new Date(),
+    },
+    {
+      username: 'Ashim',
+      message: 'Webpage launch.',
+      timestamp: new Date(),
     }
-  };
+  ]);
+
+  // Edit the blog content directly in the code
+  const updatedPosts = [
+    {
+      username: 'Ashim',
+      message: 'wp launch',
+      timestamp: new Date(),
+    },
+    {
+      username: 'Ashim',
+      message: 'Currently working on finishing touches of the website!',
+      timestamp: new Date(),
+    },
+    {
+      username: 'Ashim',
+      message: 'Animations fixed in first page.',
+      timestamp: new Date(),
+    },
+    {
+      username: 'Ashim',
+      message: 'Working on the blog/upload sections',
+      timestamp: new Date(),
+    },
+  ];
 
   return (
     <div className="blog-container">
       <h1 className="blog-heading">Belonging2Soil Blog!</h1>
-      <textarea
-        className="blog-textarea"
-        placeholder="Write your contribution here..."
-        value={blogText}
-        onChange={handleInputChange}
-      />
-      <button className="blog-post-button" onClick={handlePostClick}>
-        Post
-      </button>
 
-      {isPopupVisible && (
-        <div className="popup">
-          <label>
-            Please enter your name:
-            <input type="text" value={userName} onChange={handleNameChange} />
-          </label>
-          <button onClick={() => setPopupVisibility(false)}>OK</button>
-        </div>
-      )}
+      {/* Display Existing Posts */}
+      <div className="posts">
+        {updatedPosts.map((post, index) => (
+          <div key={index} className="blog-post">
+            <p>{post.username}</p>
+            <p>{post.message}</p>
+            <p>{post.timestamp.toLocaleString()}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
