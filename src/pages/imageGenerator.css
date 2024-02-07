@@ -1,0 +1,66 @@
+.imageGenerator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("../img/layer-base.png");
+    background-size: cover;
+    backdrop-filter: blur(5px); /* Adds a blur effect to the background */
+  }
+  
+  .header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: black; /* Changed header text color to black */
+    font-weight: 500;
+    font-style: italic;
+
+  }
+  
+  .img-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .img-loading-text {
+    color: black; /* Changed loading text color to black */
+  }
+  
+  .image img {
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px solid black; /* Added border to generated images with black color */
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-input {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .generate-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .generate-btn:hover {
+    background-color: #0056b3;
+  }
+  

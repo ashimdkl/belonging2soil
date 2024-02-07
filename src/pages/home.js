@@ -6,7 +6,7 @@ import dungeonImage from "../img/dungeon.png";
 import Button from "../components/button";
 import "./cssForHome.css";
 
-const transparentGifSrc = "https://64.media.tumblr.com/c9fdeea7e3bd65237afe87afcb401d60/tumblr_p787sf0CPK1vpf6ddo1_640.gif";
+const transparentGifSrc = "https://giffiles.alphacoders.com/865/86538.gif";
 
 function App() {
   const [shouldSway, setShouldSway] = useState(true);
@@ -96,7 +96,7 @@ function App() {
             />
             {/* Button 4 */}
             <Button
-              onClick={() => window.location.href = 'YOUR_AI_URL'}
+              onClick={() => window.location.href = '/ai'}
               label="Learn About Our Ai!"
               top="415px"
               left="1530px"
