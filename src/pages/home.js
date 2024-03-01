@@ -97,7 +97,7 @@ function App() {
             {/* Button 4 */}
             <Button
               onClick={() => window.location.href = '/ai'}
-              label="Learn About Our Ai!"
+              label="Use our AI to Make Images!"
               top="415px"
               left="1530px"
             />
