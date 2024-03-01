@@ -49,4 +49,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow to the image */
   }
   
-  
+  .p {
+    color: black;
+  }

@@ -1,0 +1,51 @@
+/* Sidebar.css */
+.sidebar {
+    position: fixed; /* Keeps the sidebar fixed during page scroll */
+    top: 0;
+    right: 0;
+    width: 20%; /* Adjust the width to make the sidebar narrower */
+    max-width: 200px; /* Maximum width to ensure it doesn't get too large */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1000; /* High z-index to ensure it's on top of other content */
+    display: flex;
+    flex-direction: column;
+    transform: translateX(0%); /* Start off-screen to the right */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for toggling */
+  }
+  
+  /* Modify this class to control the visibility when the sidebar is open */
+  .sidebar-open {
+    transform: translateX(0); /* Move sidebar into view */
+  }
+  
+  .sidebar a {
+    padding: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+  }
+  
+  .sidebar a:hover {
+    background-color: #ddd;
+  }
+
+
+  .sidebar-toggle {
+    position: fixed;
+    top: 20px; /* Distance from the top of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    z-index: 2000; /* Above the sidebar */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sidebar-toggle img {
+    width: 75px;
+    height: 75px;
+  }
+  
