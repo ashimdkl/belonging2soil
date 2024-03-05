@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from "react-router-dom";
-import Sidebar from './pages/sidebar'; 
+import Sidebar from './pages/sidebar';
 import HomePage from './pages/home';
 import MissionPage from './pages/mission';
 import GalleryPage from './pages/gallery';
@@ -9,25 +9,11 @@ import BlogPage from './pages/blog';
 import AiPage from './pages/imageGenerator';
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-  // Adjust toggleSidebar to directly set the state to true or false
-  const toggleSidebar = (shouldBeOpen) => {
-    // If shouldBeOpen is a boolean, set it directly. Otherwise, toggle the current state.
-    setIsSidebarOpen(typeof shouldBeOpen === 'boolean' ? shouldBeOpen : !isSidebarOpen);
-  };
-
   return (
     <div className="App">
-      {/* Sidebar toggle button */}
-      <button onClick={() => toggleSidebar()} className="sidebar-toggle">
-        <img src="https://cdn.iconscout.com/icon/free/png-256/free-three-116-433170.png" alt="Toggle Sidebar" />
-      </button>
-      
-      {/* Conditionally render Sidebar component with a dynamic class for animation */}
-      <div className={`sidebar-container ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-        {/* Pass a function that sets the sidebar state to false */}
-        <Sidebar toggleSidebar={() => toggleSidebar(false)} />
+      {/* Sidebar is always rendered without conditional visibility */}
+      <div className="sidebar-container">
+        <Sidebar />
       </div>
 
       {/* Application routes */}

@@ -102,21 +102,19 @@ const ImageGenerator = () => {
           <MessageList
             typingIndicator={typing ? <TypingIndicator content='Barry is typing...' /> : null}
           >
-        {messages.map((message, i) => (
-      <Message
-        key={i}
-        model={{...message,message: `${message.sender === "user" ? "User" : "Barry"}: ${message.message}`,
-        }}
-
+          {messages.map((message, i) => (
+          <Message
+            key={i}
+           model={{...message,message: `${message.sender === "user" ? "User" : "Barry"}: ${message.message}`,
+      }}
       className={message.sender === "user" ? "user-message" : "ai-message"}
     />
-    ))}
-      
-      </MessageList>
+  ))}
+</MessageList>
 
-      <MessageInput placeholder="Type your question here!" onSend={handleSend} />      
-      </ChatContainer>
-      </MainContainer>
+            <MessageInput placeholder="Type your question here!" onSend={handleSend} />
+          </ChatContainer>
+        </MainContainer>
       </div>
       <div className="right-panel">
         <div className="imageGenerator">

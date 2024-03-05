@@ -97,7 +97,7 @@ function App() {
             {/* Button 4 */}
             <Button
               onClick={() => window.location.href = '/ai'}
-              label="Use our AI to Make Images!"
+              label="B2S AI Tools"
               top="415px"
               left="1530px"
             />
