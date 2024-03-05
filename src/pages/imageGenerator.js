@@ -17,6 +17,30 @@ const ImageGenerator = () => {
   ]);
   const inputRef = useRef(null);
 
+   // New state for the randomization feature
+   const [randomCharacter, setRandomCharacter] = useState('');
+   const [isRandomizing, setIsRandomizing] = useState(false);
+
+  const characters = ["earthworm", "millipede", "bacteria", "springtail", "centipede", "water bear"];
+  const goals = ["get food!", "survive the day!", "find a mate!", "explore the world!", "find a new home!", "escape predators!"];
+  const feelings = ["sad", "happy", "hungry", "upset", "excited", "tired", "energetic", "bored", "angry", "anxious", "calm", "confused", "content", "depressed", "disappointed", "disgusted", "distracted", "embarrassed", "enthusiastic", "frustrated", "grateful", "guilty", "hopeful", "hurt", "interested", "jealous", "lonely", "loved", "nervous", "overwhelmed", "peaceful", "proud", "relieved", "sad", "scared", "shocked", "silly", "stressed", "surprised", "thankful", "uncomfortable", "worried"];
+  const randomizeCharacter = () => {
+    setIsRandomizing(true);
+  
+    // Randomly select one item from each array
+    const character = characters[Math.floor(Math.random() * characters.length)];
+    const goal = goals[Math.floor(Math.random() * goals.length)];
+    const feeling = feelings[Math.floor(Math.random() * feelings.length)];
+  
+    // Concatenate the selections into a single message
+    const message = `You are a ${character}, you want to ${goal} and you're feeling ${feeling}.`;
+  
+    // Update state with the new message
+    setRandomCharacter(message);
+  
+    setIsRandomizing(false);
+  };
+  
   const generateImage = async () => {
     if (inputRef.current.value === "") {
       return;
@@ -107,14 +131,20 @@ const ImageGenerator = () => {
             key={i}
            model={{...message,message: `${message.sender === "user" ? "User" : "Barry"}: ${message.message}`,
       }}
-      className={message.sender === "user" ? "user-message" : "ai-message"}
-    />
-  ))}
-</MessageList>
+      className={message.sender === "user" ? "user-message" : "ai-message"}/>))}
+          </MessageList>
 
-            <MessageInput placeholder="Type your question here!" onSend={handleSend} />
+          <MessageInput placeholder="Type your question here!" onSend={handleSend} />
           </ChatContainer>
         </MainContainer>
+
+        {/* New container for the randomization feature */}
+          <div className="randomizer-container">
+          <div style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Click to randomize your character!</div>
+            <button onClick={randomizeCharacter} disabled={isRandomizing} className="randomize-btn">Randomize!</button> 
+              {randomCharacter && !isRandomizing && <div>{randomCharacter}</div>}
+          </div>
+
       </div>
       <div className="right-panel">
         <div className="imageGenerator">

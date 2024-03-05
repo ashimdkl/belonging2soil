@@ -217,3 +217,30 @@ code {
   outline: #000;
 }
 
+/* Existing styles remain unchanged */
+
+/* Styles for the randomization feature container */
+.randomizer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  /* Ensure this doesn't overlap with other elements */
+}
+
+/* Styles for the "Randomize!" button */
+.randomize-btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.randomize-btn:disabled {
+  background-color: #0056b3;
+  cursor: not-allowed;
+}
