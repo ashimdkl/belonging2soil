@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import './imageGenerator.css';
+import { useSupabaseClient } from '@supabase/auth-helpers-react';
 
 const ImageGenerator = () => {
   const [imageUrl, setImageUrl] = useState("/");
@@ -41,37 +42,40 @@ const ImageGenerator = () => {
     setIsRandomizing(false);
   };
   
+  
+  const supabase = useSupabaseClient();
+
   const generateImage = async () => {
     if (inputRef.current.value === "") {
+      alert("Please enter a prompt.");
       return;
     }
 
     setIsLoading(true); // Set loading state to true
 
     try {
-      const response = await fetch(
-        "https://api.openai.com/v1/images/generations",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
-          },
-          body: JSON.stringify({
-            prompt: inputRef.current.value,
-            n: 1,
-            size: "512x512",
-          }),
-        }
-      );
+      const response = await fetch("https://api.openai.com/v1/images/generations", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
+        },
+        body: JSON.stringify({
+          prompt: inputRef.current.value,
+          n: 1,
+          size: "512x512",
+        }),
+      });
 
       const data = await response.json();
       const imageUrl = data.data[0].url;
       setImageUrl(imageUrl);
+
+      await supabase.from('generated_images').insert([{ url: imageUrl }]);
     } catch (error) {
-      console.error("Error generating image:", error);
+      console.error("Error generating or storing image:", error);
     } finally {
-      setIsLoading(false); // Set loading state to false after image is loaded
+      setIsLoading(false);
     }
   };
 
