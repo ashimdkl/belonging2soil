@@ -1,0 +1,93 @@
+.sp-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .sp-login-form,
+  .sp-upload-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+  .sp-user-info {
+    margin: 20px 0;
+  }
+  
+  /* Buttons */
+  button {
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px;
+  }
+  
+  /* Specific to the upload button */
+  .sp-upload-form .form-control {
+    margin: 20px 0;
+  }
+  
+  /* Styles for image gallery */
+  .sp-g-4 {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    width: 300px; /* Set the width of the card */
+    height: 300px; /* Set the height of the card */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img-top {
+    width: 100%; /* Make the image width 100% of the card */
+    height: 100%; /* Make the image height 100% of the card */
+    object-fit: cover; /* Ensure the image covers the entire area of the card */
+  }
+  
+  .card-body {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  
+  /* Button variations */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  /* Sign-out button positioned at the top-right */
+  .btn-secondary {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  

@@ -7,6 +7,7 @@ import GalleryPage from './pages/gallery';
 import ContributePage from './pages/contribute';
 import BlogPage from './pages/blog';
 import AiPage from './pages/imageGenerator';
+import ProfilePage from './pages/savePhotos';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/mission" element={<MissionPage />} />
+        <Route path="/savePhotos" element={<ProfilePage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contribute" element={<ContributePage />} />
         <Route path="/blog" element={<BlogPage />} />

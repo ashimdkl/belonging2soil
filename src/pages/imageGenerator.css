@@ -13,110 +13,44 @@ body {
   box-sizing: border-box;
 }
 
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 /* Container for the whole app */
-.container {
+.ig-container {
   display: flex;
   height: 100vh;
-  background-color: rgb(135, 135, 135); /* Set white background for the entire page */
-  color: rgb(0, 0, 0); /* Set text color to black */
+  background-color: #f0f0f0; /* Changed to match body for a consistent background */
+  color: rgb(0, 0, 0);
 }
 
-/* Left panel for the textGenerator */
-.left-panel {
+/* Panels */
+.ig-left-panel, .ig-right-panel {
   flex: 1;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  outline: 2px solid #000000; /* Blue outline */
-  padding: 10px;
-  margin-right: 10px;
-  border: 2px solid black;
-  border-radius: 5px;
-  font-size: 16px;
+  align-items: center;
+  justify-content: center;
 }
 
-.input-outline {
-  border: 2px solid #007bff; /* Example: Blue outline */
-  padding: 5px; /* Adds some space between the outline and the input */
-  border-radius: 5px; /* Optional: Rounds the corners of the outline */
-}
-
-
-
-/* Styles for the message input */
-.placeholder {
-  padding: 10px;
-  border: 2px solid #000000; /* Add default border */
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  color: white; /* Text color */
-}
-
-/* Styles for the message input when focused */
-.search-input:focus {
-  border-color: #007bff; /* Change border color when focused */
-}
-
-
-/* Styles for the send button */
-.send-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-left: 10px; /* Add margin to separate the button from the input */
-}
-
-/* Styles for the attach button */
-.attach-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-right: 10px; /* Add margin to separate the button from the input */
-}
-
-/* Right panel for the imageGenerator */
-.right-panel {
-  flex: 1;
+/* Styles specific to image generator */
+.ig-imageGenerator {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
+  align-items: center;
+  justify-content: center;
 }
 
-/* Image generator styles */
-.imageGenerator {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  background-size: cover;
-  backdrop-filter: blur(5px); /* Adds a blur effect to the background */
-}
-
-.header {
+.ig-header {
   font-size: 24px;
   margin-bottom: 20px;
-  font-weight: bold; /* Set text to bold */
-  font-family: 'Comic Sans MS', cursive; /* Set font family to Comic Sans */
+  font-weight: bold;
+  font-family: 'Comic Sans MS', cursive;
 }
 
-.img-loading {
+.ig-img-loading {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -124,27 +58,28 @@ code {
   margin-bottom: 20px;
 }
 
-.img-loading-image img {
-  width: 50px; /* Adjust width of the loading icon */
+.ig-img-loading-image img {
+  width: 50px;
 }
 
-.img-loading-text {
-  font-weight: bold; /* Set text to bold */
+.ig-img-loading-text {
+  font-weight: bold;
 }
 
-.image img {
+.ig-image img {
   max-width: 100%;
   max-height: 100%;
-  border: 1px solid black; /* Added border to generated images with black color */
+  border: 1px solid black;
 }
 
-.search-box {
+/* Input and Buttons */
+.ig-search-box {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.search-input {
+.ig-search-input {
   padding: 10px;
   margin-right: 10px;
   border: 2px solid black;
@@ -152,9 +87,9 @@ code {
   font-size: 16px;
 }
 
-.generate-btn {
+.ig-generate-btn, .ig-download-btn {
   padding: 10px 20px;
-  background-color: #007bff;
+  margin-top: 10px;
   color: white;
   border: none;
   border-radius: 5px;
@@ -162,74 +97,53 @@ code {
   font-size: 16px;
 }
 
-.generate-btn:hover {
+.ig-generate-btn {
+  background-color: #007bff;
+}
+
+.ig-generate-btn:hover {
   background-color: #0056b3;
 }
 
-/* Enhancing the message input for better visibility */
-.message-input, .cs-message-input__input {
-  border: 2px solid #007bff; /* Blue border for emphasis */
-  background-color: white; /* White background */
-  color: black; /* Black text color for contrast */
-  padding: 10px; /* Padding for larger clickable area */
-  margin: 10px 0; /* Margin to separate from message list */
-  border-radius: 5px; /* Rounded corners */
+.ig-download-btn {
+  background-color: #28a745;
 }
 
-/* Placeholder style */
-.message-input::placeholder, .cs-message-input__input::placeholder {
-  color: #999; /* Lighter text color for placeholder */
+.ig-download-btn:hover {
+  background-color: #218838;
 }
 
-/* Focus style to highlight when active */
-.message-input:focus, .cs-message-input__input:focus {
-  border-color: #0056b3; /* Darker blue border on focus */
-  outline: none; /* Remove default outline */
-}
-
-
-
-/* Media query for responsiveness */
+/* Responsive design adjustments */
 @media (max-width: 900px) {
-  .message-input-container {
+  .ig-message-input-container {
     width: 90%;
-    
   }
-  .send-button {
-    margin-left: 0;
-  }
-  .attach-button {
-    margin-right: 0;
+
+  .ig-send-button, .ig-attach-button {
+    margin: 0; /* Adjust margin for smaller screens */
   }
 }
 
-/* Message styles for user */
-.user-message .cs-message__content {
-  background-color: #b3d9ff; /* Light blue background for user messages */
-  color: #000; /* Black text color */
-  outline: #000;
+/* Styles for chat messages */
+.ig-user-message .cs-message__content {
+  background-color: #b3d9ff;
+  color: #000;
 }
 
-/* Message styles for AI */
-.ai-message .cs-message__content {
-  background-color: #d4d3cc; /* Khaki background for AI messages */
-  color: #000; /* Black text color */
-  outline: #000;
+.ig-ai-message .cs-message__content {
+  background-color: #d4d3cc;
+  color: #000;
 }
 
-/* Existing styles remain unchanged */
-
-/* Styles for the randomization feature container */
-.randomizer-container {
+/* Randomization feature styles */
+.ig-randomizer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  /* Ensure this doesn't overlap with other elements */
 }
 
-/* Styles for the "Randomize!" button */
-.randomize-btn {
+.ig-randomize-btn {
   padding: 10px 20px;
   margin-top: 10px;
   background-color: #007bff;
@@ -240,7 +154,7 @@ code {
   font-size: 16px;
 }
 
-.randomize-btn:disabled {
+.ig-randomize-btn:disabled {
   background-color: #0056b3;
   cursor: not-allowed;
 }

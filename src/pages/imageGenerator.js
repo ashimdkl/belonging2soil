@@ -51,7 +51,7 @@ const ImageGenerator = () => {
       return;
     }
 
-    setIsLoading(true); // Set loading state to true
+    setIsLoading(true);
 
     try {
       const response = await fetch("https://api.openai.com/v1/images/generations", {
@@ -71,6 +71,7 @@ const ImageGenerator = () => {
       const imageUrl = data.data[0].url;
       setImageUrl(imageUrl);
 
+      // Corrected table name
       await supabase.from('generated_images').insert([{ url: imageUrl }]);
     } catch (error) {
       console.error("Error generating or storing image:", error);
@@ -78,6 +79,7 @@ const ImageGenerator = () => {
       setIsLoading(false);
     }
   };
+
 
   const handleSend = async (message) => {
     const newMessage = {
@@ -90,6 +92,19 @@ const ImageGenerator = () => {
     setMessages(newMessages);
     setTyping(true);
     await processMessageToChatGPT(newMessages);
+  };
+
+  const downloadImage = () => {
+    if (imageUrl && imageUrl !== "/") {
+      const link = document.createElement('a');
+      link.href = imageUrl;
+      link.download = 'generated-image.png'; // This could be dynamically generated based on user input or other data
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      alert("No image to download. Please generate an image first.");
+    }
   };
 
   async function processMessageToChatGPT(chatMessages) {
@@ -123,58 +138,59 @@ const ImageGenerator = () => {
   }
 
   return (
-    <div className="container">
-      <div className="left-panel">
-        <MainContainer>
-          <ChatContainer>
-          <MessageList
-            typingIndicator={typing ? <TypingIndicator content='Barry is typing...' /> : null}
-          >
+<div className="ig-container">
+  <div className="ig-left-panel">
+    <MainContainer>
+      <ChatContainer>
+        <MessageList
+          typingIndicator={typing ? <TypingIndicator content='Barry is typing...' /> : null}>
           {messages.map((message, i) => (
-          <Message
-            key={i}
-           model={{...message,message: `${message.sender === "user" ? "User" : "Barry"}: ${message.message}`,
-      }}
-      className={message.sender === "user" ? "user-message" : "ai-message"}/>))}
-          </MessageList>
-
-          <MessageInput placeholder="Type your question here!" onSend={handleSend} />
-          </ChatContainer>
-        </MainContainer>
-
-        {/* New container for the randomization feature */}
-          <div className="randomizer-container">
-          <div style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Click to randomize your character!</div>
-            <button onClick={randomizeCharacter} disabled={isRandomizing} className="randomize-btn">Randomize!</button> 
-              {randomCharacter && !isRandomizing && <div>{randomCharacter}</div>}
+            <Message
+              key={i}
+              model={{
+                ...message,
+                message: `${message.sender === "user" ? "User" : "Barry"}: ${message.message}`,
+              }}
+              className={message.sender === "user" ? "ig-user-message" : "ig-ai-message"}
+            />
+          ))}
+        </MessageList>
+        <MessageInput placeholder="Type your question here!" onSend={handleSend} />
+      </ChatContainer>
+    </MainContainer>
+    <div className="ig-randomizer-container">
+      <div style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Click to randomize your character!</div>
+      <button onClick={randomizeCharacter} disabled={isRandomizing} className="ig-randomize-btn">Randomize!</button>
+      {randomCharacter && !isRandomizing && <div>{randomCharacter}</div>}
+    </div>
+  </div>
+  <div className="ig-right-panel">
+    <div className="ig-imageGenerator">
+      <div className="ig-header">Belonging2Soil AI Image Generator</div>
+      <div className="ig-img-loading">
+        {isLoading && (
+          <div className="ig-img-loading-image">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/011/299/153/small/simple-loading-or-buffering-icon-design-png.png" alt="loading icon" />
           </div>
-
+        )}
+        <div className="ig-img-loading-text">{isLoading ? 'Loading Your Image Please wait.' : 'Your Generated Image'}</div>
+        {!isLoading && imageUrl !== "/" && (
+          <>
+            <div className="ig-image">
+              <img src={imageUrl} alt="generated image" />
+            </div>
+            <div className="ig-download-btn" onClick={downloadImage}>Download Your Image!</div>
+          </>
+        )}
       </div>
-      <div className="right-panel">
-        <div className="imageGenerator">
-          <div className="header">Belonging2Soil AI Image Generator</div>
-          <div className="img-loading">
-            {/* Loading image */}
-            {isLoading && (
-              <div className="img-loading-image">
-                <img src="https://static.vecteezy.com/system/resources/thumbnails/011/299/153/small/simple-loading-or-buffering-icon-design-png.png" alt="loading icon" />
-              </div>
-            )}
-            <div className="img-loading-text">{isLoading ? 'Loading Your Image Please wait.' : 'Your Generated Image'}</div>
-            {/* Render the generated image if it exists */}
-            {!isLoading && imageUrl !== "/" && (
-              <div className="image">
-                <img src={imageUrl} alt="generated image" />
-              </div>
-            )}
-          </div>
-          <div className="search-box">
-            <input ref={inputRef} type="text" className='search-input' placeholder='Describe your image...' />
-            <div className="generate-btn" onClick={generateImage}>Generate</div>
-          </div>
-        </div>
+      <div className="ig-search-box">
+        <input ref={inputRef} type="text" className='ig-search-input' placeholder='Describe your image...' />
+        <div className="ig-generate-btn" onClick={generateImage}>Generate</div>
       </div>
     </div>
+  </div>
+</div>
+
   );
 };
 
