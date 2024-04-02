@@ -1,4 +1,21 @@
 /* Sidebar styles */
+
+.playAudioText {
+  background: none;
+  z-index: 1000;
+  border: none;
+  color: rgb(0, 0, 0); /* Or any color that indicates interactivity */
+  cursor: pointer;
+  font-size: inherit; /* Match the surrounding text size */
+  padding: 0;
+  margin: 0;
+  text-decoration: underline; /* Optional: makes it clear it's clickable */
+}
+
+.playAudioText:focus {
+  outline: none; /* Removes focus outline for aesthetics; consider replacing with accessible styling */
+}
+
 .sidebar {
   position: fixed; /* Keeps the sidebar fixed during page scroll */
   top: 0;
@@ -6,24 +23,26 @@
   width: 20%; /* Adjust the width of the sidebar */
   max-width: 200px; /* Maximum width to ensure it doesn't get too large */
   height: 100vh; /* Full height of the viewport */
-  background-color: #ffffff; /* Sidebar background color */
+  background-color: #52684f; /* Sidebar background color */
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow for some depth */
   padding: 20px;
   z-index: 1000; /* High z-index to ensure it's on top of other content */
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .sidebar a {
   padding: 10px;
   margin-bottom: 10px;
   text-decoration: none;
-  color: black; /* Link color */
   font-size: 16px; /* Font size for sidebar links */
+  color: white;
+
 }
 
 .sidebar a:hover {
-  background-color: #ffffff; /* Hover effect for links */
+  background-color: #9bc1ce; /* Hover effect for links */
 }
 
 /* Styles for the rest of the content to prevent overlap with the sidebar */

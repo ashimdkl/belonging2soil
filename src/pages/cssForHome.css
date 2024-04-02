@@ -1,3 +1,13 @@
+.playAudioText {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  z-index: 1000;
+}
+
+
 * {
   margin: 0;
   padding: 0;
