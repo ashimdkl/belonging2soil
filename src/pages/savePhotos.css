@@ -1,3 +1,52 @@
+/* imageGenerator.css */
+
+.ig-info-icon {
+  top: 20px; /* Adjust this value to move the icon down a bit */
+  left: 20px; /* Adjust this value to move the icon right a bit */
+  height: 100px;
+  width: 100px;
+  z-index: 1000; /* Ensure the icon stays on top of other elements */
+  cursor: pointer;
+}
+
+.ig-video-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050; /* Higher than .ig-info-icon to ensure it overlays on top when visible */
+  background-color: white; /* Add a background color for visibility */
+  padding: 20px; /* Add some padding around the video */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+  border-radius: 8px; /* Optional: rounds the corners of the video popup */
+}
+
+.ig-video-popup button {
+  position: absolute;
+  top: -10px; /* Adjust as needed */
+  right: -10px; /* Adjust as needed */
+  background-color: #f44336; /* Red color for the close button */
+  color: white; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 50%; /* Circular button */
+  cursor: pointer;
+  padding: 5px 10px; /* Adjust padding */
+  font-size: 16px; /* Adjust font size */
+}
+
+/* Adjustments for mobile responsiveness (optional) */
+@media (max-width: 768px) {
+  .ig-info-icon {
+    top: 10px;
+    left: 10px;
+  }
+  .ig-video-popup {
+    width: 90%; /* Make the video take more space on smaller screens */
+  }
+}
+
+
+
 .sp-container {
     display: flex;
     flex-direction: column;

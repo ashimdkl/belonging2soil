@@ -37,7 +37,7 @@ const Mission = () => {
       <div className="meet-the-team">
         <p className="meet-the-team-text">Meet the Team</p>
         <div className="team-member">
-          <p>Amy Youngs | Addy Shadrick | Jian Chen | Ashim Dhakal | Nathan Garthwaite | Shuning Jiang | Isabel Nixon | Alena Sun</p>
+          <p>Amy Youngs | Addy Shadrick | Ashim Dhakal | Nathan Garthwaite | Alena Sun</p>
         </div>
         {/* Repeat the structure for other team members */}
       </div>

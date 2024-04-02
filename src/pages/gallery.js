@@ -30,7 +30,7 @@ const Gallery = () => {
 
   return (
     <div className="gallery-container">
-      <div className="text-overlay">gallery</div>
+      <div className="text-overlay">Unity VR Game Gallery</div>
       <div className="image-wrapper">
         <img src={images[currentImageIndex]} alt={`${currentImageIndex + 1}`} />
         <button className="arrow left" onClick={goToPreviousImage}>
